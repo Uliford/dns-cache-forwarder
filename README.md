@@ -1,7 +1,7 @@
 # DNS Forwarder with Local Cache (UDP, Python)
 
 [![tests](https://github.com/Uliford/dns-cache-forwarder/actions/workflows/tests.yml/badge.svg)](https://github.com/Uliford/dns-cache-forwarder/actions/workflows/tests.yml)
-![Python](https://img.shields.io/badge/python-3.10%2B-blue)
+![Python](https://img.shields.io/badge/python-3.10%E2%80%933.14-blue)
 ![dnspython](https://img.shields.io/badge/dnspython-2.6%2B-informational)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
