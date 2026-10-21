@@ -9,6 +9,8 @@ A small local DNS server written in Python. It receives DNS queries over UDP, an
 
 I built it for **Project 1 of Computer Networks II** at the Hellenic Mediterranean University (HMU), Department of Electrical & Computer Engineering. It handles real traffic: with the operating system pointed at it, Firefox browsed normally through it (134 queries in 32 seconds, no errors).
 
+The networking background (UDP, the DNS hierarchy, iterative vs. recursive queries, the message format and a real query decoded byte by byte) is in **[docs/THEORY.md](docs/THEORY.md)**.
+
 ## Features
 
 - **UDP DNS server** on any port (`5300` by default, `53` with root).
@@ -200,6 +202,8 @@ Queries and responses share the same layout ([RFC 1035 §4.1](https://www.rfc-ed
 | Authority | NS / SOA records | the SOA from `a.gtld-servers.net` in NXDOMAIN answers |
 | Additional | e.g. the OPT record of EDNS(0) | `ARCOUNT = 1` in queries from dig |
 
+More detail, with every flag, the RCODE table and the first query of the demo decoded byte by byte, in [docs/THEORY.md](docs/THEORY.md#5-the-dns-message-format).
+
 ## Project structure
 
 ```text
@@ -208,7 +212,9 @@ dns-cache-forwarder/
 ├── requirements.txt           # dnspython
 ├── tests/
 │   └── test_dns_server.py     # end-to-end tests with a fake upstream
-├── docs/screenshots/          # demo screenshots (dig, server log, Wireshark)
+├── docs/
+│   ├── THEORY.md              # UDP and DNS theory behind the project
+│   └── screenshots/           # demo screenshots (dig, server log, Wireshark)
 ├── .github/workflows/tests.yml
 └── LICENSE
 ```
